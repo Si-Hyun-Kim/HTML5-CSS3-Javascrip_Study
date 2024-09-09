@@ -146,7 +146,18 @@
 - 웹 페이지의 저작자, 문자 인코딩 방식, 문서 내용 등 다양한 메타 데이터를 표현하기 위해 사용
 - `name`과 `content`의 속성 쌍으로 구성
   - 웹 페이지의 저작가가 "황기태"임을 표기하는 사례
-&nbsp;&nbsp;&nbsp;&nbsp;
 ```html
 <meta name="author" content="황기태">
+```
+  - 웹 페이지의 내용 설명
+```html
+<meta name="description" content="입학 요령에 대한 자세한 사항">
+```
+  - 웹 페이지의 키워드(검색 엔진에 의해 잘 발견되도록 하기 위함)
+```html
+<meta name="keywords" content="컴퓨터, 소프트웨어, 스마트폰">
+```
+- charset 속성으로는 웹 페이지에 사용된 문자의 인코딩 방식을 지정할 수 있다.
+```html
+<meta charset="utf-8">
 ```

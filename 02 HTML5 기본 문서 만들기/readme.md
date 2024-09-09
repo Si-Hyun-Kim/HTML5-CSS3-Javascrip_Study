@@ -146,12 +146,7 @@
 - 웹 페이지의 저작자, 문자 인코딩 방식, 문서 내용 등 다양한 메타 데이터를 표현하기 위해 사용
 - `name`과 `content`의 속성 쌍으로 구성
   - 웹 페이지의 저작가가 "황기태"임을 표기하는 사례
-<<<<<<< HEAD
 &nbsp;&nbsp;&nbsp;&nbsp;
 ```html
 <meta name="author" content="황기태">
 ```
-=======
-&nbsp;&nbsp;&nbsp;&nbsp;```html
-<meta name="author" content="황기태">```
->>>>>>> 2e980c5bc154dd1c333268587398830fd3913971

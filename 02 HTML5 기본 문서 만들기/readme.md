@@ -42,12 +42,11 @@
 
 * 태그와 속성은 대소문자를 구분하지 않는다.
 * 속성 값에 불필요한 공백 문자가 들어가면 HTML 표준에 어긋난다.
-  예)
-  ```html
-  <img Src="heart.jpg" width="~~ 100~~" height="50" alt="사랑합니다.">
-  ```
-
-
+> 예)
+> ```html
+> <img Src="heart.jpg" width="~~ 100~~" height="50" alt="사랑합니다.">
+> ```
+<br><br>
 
 # HTML 기본 문서 만들기
 ## ```<title></title>```타이틀 달기
@@ -56,11 +55,9 @@
 - ```<head>``` 내에서만 작성
 
 ## 문단 제목(장, 절, 소제목 등), ```<h1>~<h6>```
-  
 ```html
 <h1>, <h2>, <h3>, <h4>, <h5>, <h6>
 ```
-  의 6개 태그 제공
 - 문단에 제목을 붙일 때 사용
 - heading의 줄임말임
 - h6로 갈수록 제목의 크기가 작아진다.
@@ -124,7 +121,7 @@
 - `메타 데이터`
   - 데이터를 설명하는 데이터
   - HTML 페이지에 대한 메타 정보를 표현하는 여러 태그들이 있다.
-  예) ```<base>, <link>, <script>, <style>, <title>, <meta>```
+  - 예) ```<base>, <link>, <script>, <style>, <title>, <meta>```
 
 - ```<style>```
   - HTML 페이지에 CSS 스타일 시트를 담는 태그
@@ -145,19 +142,100 @@
 ### 메타 데이터, ```<meta>```
 - 웹 페이지의 저작자, 문자 인코딩 방식, 문서 내용 등 다양한 메타 데이터를 표현하기 위해 사용
 - `name`과 `content`의 속성 쌍으로 구성
-  - 웹 페이지의 저작가가 "황기태"임을 표기하는 사례
-```html
-<meta name="author" content="황기태">
-```
-  - 웹 페이지의 내용 설명
-```html
-<meta name="description" content="입학 요령에 대한 자세한 사항">
-```
-  - 웹 페이지의 키워드(검색 엔진에 의해 잘 발견되도록 하기 위함)
-```html
-<meta name="keywords" content="컴퓨터, 소프트웨어, 스마트폰">
-```
+>- 웹 페이지의 저작가가 "황기태"임을 표기하는 사례
+>```html
+><meta name="author" content="황기태">
+>```
+>- 웹 페이지의 내용 설명
+>```html
+><meta name="description" content="입학 요령에 대한 자세한 사항">
+>```
+>- 웹 페이지의 키워드(검색 엔진에 의해 잘 발견되도록 하기 위함)
+>```html
+><meta name="keywords" content="컴퓨터, 소프트웨어, 스마트폰">
+>```
 - charset 속성으로는 웹 페이지에 사용된 문자의 인코딩 방식을 지정할 수 있다.
 ```html
 <meta charset="utf-8">
 ```
+<br><br>
+
+# 고급 문서 만들기
+## 이미지 삽입, ```<img>```
+- HTML 문서에 이미지 삽입
+- `<img>`태그의 속성들은 다음과 같다
+  - `src` 이미지 파일의 URL. 필수 속성
+  - `alt` 이미지가 없거나 손상되는 등 이미지를 출력할 수 없는 경우 출력되는 문자열. 필수 속성
+  - `width` 이미자가 출력되는 너비로, 생략되면 원본 이미지의 폭으로 출력. 픽셀 수
+  - `height` 이미지가 출력되는 높이로, 생략되면 원본 이미지의 너비. 픽셀 수
+
+## 리스트 만들기, `<ol>, <ul>, <dl>`
+- 리스트의 각 아이템은 `<li> 태그` 사용
+- `</li>`는 생략 가능
+
+### `<li>`태그
+```html
+<li type="1"|"A"|"a"|"I"|"i">item</li>   <!-- type은 <ol>태그에서만 유효-->
+```
+
+### `<ol></ol>` 순서 있는 리스트(Ordered List)
+```html
+<ol type="1"|"A"|"a"|"I"|"i" start = "value"></ol>
+```
+> `type` = 마커 종류
+> - `type="1"` (default) 1, 2, 3, ...
+> - `type="A"` A, B, C, ...
+> - `type="a"` a, b, c, ...
+> - `type="I"` Ⅰ, Ⅱ, Ⅲ, ...
+> - `type="i"` ⅰ, ⅱ, ⅲ, ...
+>
+> `start` = 마커의 시작 값<br>
+> &nbsp; 예) start="5" &nbsp;&nbsp;&nbsp;&nbsp;// 5부터 시작
+
+### `<ul></ul>` 순서 없는 리스트(Unordered List)
+```html
+<ul>
+  <li>아이템_1</li>
+  <li>아이템_2</li>
+</ul>
+```
+
+### `<dl></dl>` 정의 리스트(Definition List)
+- 정의 리스트는 (용어, 설명)을 하나의 아이템으로 나열하는 리스트이다.
+- 정의 리스트 전체 = `<dl>`
+- 용어 = `<dt>`
+- 설명 = `<dd>`
+- `</dt>`, `</dd>`는 모두 생략 가능
+
+
+## 표 만들기, `<table>`
+### 표 전체 구성
+```html
+<table>
+  <caption>Caption</caption>
+  <thead>...</thead>
+  <tfoot>...</tfoot>
+  <tbody>...</tbody>
+</table>
+```
+> `<caption>`은 표의 제목을 나타내는 태그로, 반드시 첫 번째로 작성되어야 함
+
+### 행과 열
+```html
+<thead>
+  <tr><th>이름</th><th>HTML</th><th>CSS</th></tr>
+</thead>
+<tbody>
+  <tr><td>수현</td><td>80</td><td>75</td></tr>
+  <tr>...</tr>
+</tbody>
+```
+
+### 비정형 표
+- `<colspan>` 가로 병합
+- `<rowspan>` 세로 병합
+
+<br><br>
+
+# 하이퍼링크
+## 하이퍼링크 만들기, `<a>`
